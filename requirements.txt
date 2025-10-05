@@ -1,0 +1,14 @@
+torch>=2.0.0
+triton>=2.0.0
+flash-linear-attention
+einops
+transformers>=4.45.0
+datasets>=3.3.0
+numpy
+matplotlib
+seaborn
+pandas
+tqdm
+wandb
+scipy
+scikit-learn
