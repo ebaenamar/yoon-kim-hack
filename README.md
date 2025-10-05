@@ -44,6 +44,10 @@ config = {
 ```
 Esta configuración intencionadamente restringida nos permite observar los sesgos inductivos fundamentales de cada modelo en un régimen de recursos limitados.
 
+### 2.4. Filosofía de Benchmarking: Ancho vs. Profundo
+
+Nuestra metodología se centra en una comparativa **ancha** para mapear el terreno de las arquitecturas. Este enfoque contrasta con una búsqueda **profunda** de hiperparámetros para un solo modelo. Para una discusión más detallada sobre las ventajas de este enfoque, consulte nuestro [Análisis Comparativo de Metodologías](COMPARISON.md).
+
 ## 3. Análisis de Resultados
 
 ### 3.1. Rendimiento Relativo: El Mapa de Especialización
