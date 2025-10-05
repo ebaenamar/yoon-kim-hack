@@ -25,3 +25,15 @@ The results shared from the other team exemplify a **deep, granular search** foc
 Our "Pentathlon" approach is the logical and necessary **first step** in a comprehensive research program. It efficiently maps the landscape and identifies the most promising architecture-task pairings. The deep hyperparameter search is the crucial **second step**, where we take the "winners" from our broad survey and optimize them for peak performance.
 
 By starting broad, we avoid prematurely optimizing an architecture that is fundamentally ill-suited for a given problem (e.g., spending weeks tuning a Transformer for the `Knapsack` task, where our results show it is unlikely to succeed). Our methodology provides the foundational map that makes a subsequent deep dive both efficient and scientifically justified.
+
+### Addendum: Why Not Use a High-Performing Transformer Baseline?
+
+A valid critique of our methodology is the use of a "low-accuracy" baseline. One might argue that a fairer comparison would involve first tuning a standard Transformer to achieve high performance, and then using that optimized configuration as the baseline for all other models.
+
+While this approach is valuable for a "best-vs-best" comparison, we deliberately avoided it in this initial phase for a crucial reason: **to prevent hyperparameter bias**.
+
+An experimental setup tuned for a Transformer is, by definition, biased towards that architecture. Applying the same (now specialized) learning rate, model dimensions, and other settings to an `LSTM` or an `SSM` would likely place them at a significant disadvantage, as their optimal configurations are almost certainly different. We would be comparing a finely-tuned champion to handicapped challengers.
+
+Our use of a modest, un-tuned configuration creates a "level playing field." It is not optimized for *any* architecture, which allows us to more confidently attribute performance differences to the fundamental inductive biases of the models themselves. The fact that `deltanet` showed learning potential on `MQAR` in this "crappy setup" while the Transformer did not is a stronger signal of its architectural suitability than if it had failed in a setup designed for its competitor.
+
+The "tuned baseline" approach is the logical **next step** (Phase 2), where we would perform a dedicated hyperparameter search for *each* promising architecture on its specialized task to determine its peak performance.
