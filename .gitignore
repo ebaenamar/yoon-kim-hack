@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Logs
+*.log
+nohup.out
+logs/*.log
+
+# Results (keep structure, ignore large files)
+results/logs/*.json
+results/benchmark_results.csv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary experiment logs
+*_300_epochs.log
+phase1_validation_master.log
